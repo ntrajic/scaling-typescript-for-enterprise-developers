@@ -1,12 +1,17 @@
-var tokyo = {
-    name: "Tokyo",
-    population: 37400000,
-    country: "Japan",
-    capitalBuilding: "Tokyo Metropolitan Government Building",
-    landmarks: [
-        "Imperial Palace",
-        "Tokyo Tower",
-        "Tokyo Skytree"
-    ]
-};
-console.log(tokyo);
+var City = /** @class */ (function () {
+    function City(name) {
+        this.name = name;
+    }
+    return City;
+}());
+function outputLocation(location) {
+    if (location instanceof City) {
+        console.log(location.name);
+    }
+    else {
+        console.log(location);
+    }
+}
+outputLocation(new City("Copenhagen"));
+outputLocation("Boise");
+outputLocation(56);

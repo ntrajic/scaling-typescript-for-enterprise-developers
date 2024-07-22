@@ -1,24 +1,14 @@
-interface City {
-  name: string;
-  population: number;
-  country: string;
+class City {
+  constructor(public name: string) {}
 }
 
-interface CapitalCity extends City {
-  capitalBuilding: string;
-  landmarks: string[];
+function outputLocation(location: City | string) {
+  if (location instanceof City) {
+    console.log(location.name);
+  } else {
+    console.log(location);
+  }
 }
 
-const tokyo: CapitalCity = {
-  name: "Tokyo",
-  population: 37400000,
-  country: "Japan",
-  capitalBuilding: "Tokyo Metropolitan Government Building",
-  landmarks: [
-    "Imperial Palace",
-    "Tokyo Tower",
-    "Tokyo Skytree"
-  ]
-};
-
-console.log(tokyo);
+outputLocation(new City("Copenhagen"));
+outputLocation("Boise");
