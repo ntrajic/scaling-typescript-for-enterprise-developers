@@ -5,7 +5,7 @@
 In this step, we'll create a class with appropriate types.
 
 1. Review the `hotels.json` file.
-2. Create a model for this data as a class in the `script.ts` file.
+2. Create a model for this data as a class in the `script.js` file.
 3. The `Hotel` class should have all of the properties of the hotel.
 
 ```json
