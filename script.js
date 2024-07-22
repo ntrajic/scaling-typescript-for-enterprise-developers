@@ -1,17 +1,13 @@
-var City = /** @class */ (function () {
-    function City(name, country) {
-        this.name = name;
-        this.country = country;
-    }
-    City.prototype.getCityInfo = function () {
-        return this.displayInfo();
-    };
-    City.prototype.displayInfo = function () {
-        return "".concat(this.name, ", ").concat(this.country);
-    };
-    return City;
-}());
-var city = new City("Bend", "United States");
-console.log(city.name);
-console.log(city.country);
-console.log(city.getCityInfo());
+var newYork = {
+    name: "New York",
+    population: 8336000,
+    country: "United States"
+};
+newYork.population = 8123123;
+console.log(newYork);
+var london = {
+    name: "London",
+    country: "UK",
+    population: 970000
+};
+console.log(london);

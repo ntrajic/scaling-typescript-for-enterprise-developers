@@ -1,19 +1,23 @@
-class City {
-  name: string;
+interface City {
+  readonly name: string;
+  population?: number;
   country: string;
-
-  constructor(name: string, country: string) {
-    this.name = name;
-    this.country = country;
-  }
-  getCityInfo(): string {
-    return this.displayInfo();
-  }
-  private displayInfo(): string {
-    return `${this.name}, ${this.country}`;
-  }
 }
 
-const city = new City("Bend", "United States");
-console.log(city.name);
-console.log(city.country);
+let newYork: City = {
+  name: "New York",
+  population: 8336000,
+  country: "United States"
+};
+
+newYork.population = 8123123;
+
+console.log(newYork);
+
+let london: City = {
+  name: "London",
+  country: "UK",
+  population: 970000
+};
+
+console.log(london);
