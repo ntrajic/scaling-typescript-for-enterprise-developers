@@ -1,14 +1,8 @@
 var city1 = {
-    name: "Istanbul",
-    country: "Turkey"
+    name: "Istanbul"
 };
 var city2 = {
-    name: "Amsterdam",
-    country: "Netherlands"
+    name: "Barcelona",
+    country: "Spain"
 };
-var venice = {
-    name: "Venice",
-    country: "Italy",
-    nickname: "The Floating City"
-};
-console.log(venice);
+console.log(city2);

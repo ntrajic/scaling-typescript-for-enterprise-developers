@@ -1,23 +1,18 @@
-const city1 = {
-  name: "Istanbul",
-  country: "Turkey"
+type City = {
+  name: string;
+  country: string;
 };
 
-type CityWithInfo = typeof city1;
+type PartialCity = Partial<City>;
 
-const city2: CityWithInfo = {
-  name: "Amsterdam",
-  country: "Netherlands"
+const city1: PartialCity = {
+  name: "Istanbul"
 };
 
-type CityWithNickname = typeof city2 & {
-  nickname: string;
+type RequiredCity = Required<City>;
+const city2: RequiredCity = {
+  name: "Barcelona",
+  country: "Spain"
 };
 
-const venice: CityWithNickname = {
-  name: "Venice",
-  country: "Italy",
-  nickname: "The Floating City"
-};
-
-console.log(venice);
+console.log(city2);
