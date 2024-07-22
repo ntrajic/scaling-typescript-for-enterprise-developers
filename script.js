@@ -1,8 +1,12 @@
-var city1 = {
-    name: "Istanbul"
+var city3 = {
+    name: "Berlin",
+    country: "Germany"
 };
-var city2 = {
-    name: "Barcelona",
-    country: "Spain"
+var city4 = {
+    name: "Paris"
 };
-console.log(city2);
+console.log(city4);
+var city5 = {
+    name: "Rome"
+};
+console.log(city5);
