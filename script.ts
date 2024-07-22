@@ -1,23 +1,24 @@
 interface City {
-  readonly name: string;
-  population?: number;
+  name: string;
+  population: number;
   country: string;
 }
 
-let newYork: City = {
-  name: "New York",
-  population: 8336000,
-  country: "United States"
+interface CapitalCity extends City {
+  capitalBuilding: string;
+  landmarks: string[];
+}
+
+const tokyo: CapitalCity = {
+  name: "Tokyo",
+  population: 37400000,
+  country: "Japan",
+  capitalBuilding: "Tokyo Metropolitan Government Building",
+  landmarks: [
+    "Imperial Palace",
+    "Tokyo Tower",
+    "Tokyo Skytree"
+  ]
 };
 
-newYork.population = 8123123;
-
-console.log(newYork);
-
-let london: City = {
-  name: "London",
-  country: "UK",
-  population: 970000
-};
-
-console.log(london);
+console.log(tokyo);

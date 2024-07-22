@@ -1,13 +1,12 @@
-var newYork = {
-    name: "New York",
-    population: 8336000,
-    country: "United States"
+var tokyo = {
+    name: "Tokyo",
+    population: 37400000,
+    country: "Japan",
+    capitalBuilding: "Tokyo Metropolitan Government Building",
+    landmarks: [
+        "Imperial Palace",
+        "Tokyo Tower",
+        "Tokyo Skytree"
+    ]
 };
-newYork.population = 8123123;
-console.log(newYork);
-var london = {
-    name: "London",
-    country: "UK",
-    population: 970000
-};
-console.log(london);
+console.log(tokyo);
