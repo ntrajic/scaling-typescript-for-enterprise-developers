@@ -11,8 +11,5 @@
   "license": "ISC",
   "dependencies": {
     "typescript": "^5.5.3"
-  },
-  "devDependencies": {
-    "@total-typescript/tsconfig": "^1.0.4"
   }
 }

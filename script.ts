@@ -1,40 +1,100 @@
-type Tree = {
+interface Activity<AttendeeType> {
   name: string;
-  height: number;
-  age: number;
+  location: string;
+  attendees: AttendeeType[];
+}
+
+interface Guest {
+  name: string;
+  interest: string;
+}
+
+type Skier = Guest & { interest: "skiing" };
+type SpaEnthusiast = Guest & { interest: "spas" };
+type Foodie = Guest & { interest: "restaurants" };
+type ThrillSeeker = Guest & {
+  interest: "adrenaline sports";
 };
 
-const oakData: Tree = {
-  name: "Oak",
-  height: 20,
-  age: 100
+const skiLesson = {
+  name: "Steeps Clinic",
+  location: "Matterhorn Gondola",
+  attendees: [
+    {
+      name: "Jessica Sweet",
+      interest: "skiing"
+    },
+    {
+      name: "Jason Williams",
+      interest: "adrenaline sports"
+    }
+  ]
 };
 
-type TreeDetails<Type> = {
-  [Key in keyof Type as `get${Capitalize<
-    string & Key
-  >}`]: () => Type[Key];
+const cookingClass = {
+  name: "Thai Cooking Class",
+  location: "West Kitchen",
+  attendees: [
+    {
+      name: "Leon Vida",
+      interest: "restaurants"
+    }
+  ]
 };
 
-type OakTree = TreeDetails<Tree>;
-
-let oak: OakTree = {
-  getName: () => oakData.name,
-  getHeight: () => oakData.height,
-  getAge: () => oakData.age
+const massage = {
+  name: "Hot Stone Massage",
+  location: "Lotus Spa Lounge",
+  attendees: [
+    {
+      name: "Jordan James",
+      interest: "spas"
+    }
+  ]
 };
 
-console.log(`Name: ${oak.getName()}`);
-console.log(`Height: ${oak.getHeight()}`);
-console.log(`Age: ${oak.getAge()}`);
+type HotelCategory = "gold" | "silver" | "bronze";
 
-type PartialTree<Type> = {
-  [Key in keyof Type]+?: Type[Key];
-};
+class Hotel {
+  readonly id: string;
+  readonly name: string;
+  cost: number;
+  amenities: string[] = [];
+  category: HotelCategory;
 
-type PartialOak = PartialTree<Tree>;
+  constructor(
+    id: string,
+    name: string,
+    cost: number,
+    category: HotelCategory
+  ) {
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.category = category;
+  }
 
-let partialOak: PartialOak = {
-  name: "Oak"
-};
-console.log(partialOak);
+  addAmenity(amenity: string) {
+    this.amenities.push(amenity);
+  }
+  describeHotel(): string {
+    return `The ${this.category} category ${
+      this.name
+    } costs $${
+      this.cost
+    } and includes the following amenities: ${this.amenities.join(
+      ", "
+    )}.`;
+  }
+}
+
+const peakLodge = new Hotel(
+  "06",
+  "Peak Lodge",
+  250,
+  "silver"
+);
+peakLodge.addAmenity("breakfast");
+peakLodge.addAmenity("wifi");
+let description = peakLodge.describeHotel();
+console.log(description);
