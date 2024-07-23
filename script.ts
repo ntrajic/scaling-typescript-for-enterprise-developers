@@ -1,16 +1,15 @@
-type Language = string | null;
-
-let language: Language = null;
-language = "Mandarin";
-
-console.log(language);
-
-type CityName = "Seoul" | "Seattle" | "Sydney";
-
-function welcomeToCity(city: CityName): string {
-  return `Welcome to ${city}`;
+interface City {
+  name: string;
+  country: string;
+  population: number;
 }
 
-console.log(welcomeToCity("Seoul"));
-console.log(welcomeToCity("Sydney"));
-console.log(welcomeToCity("Minneapolis"));
+type CityProperties = keyof City;
+
+type CityProps = "name" | "city";
+
+const cityProperties: CityProperties[] = [
+  "name",
+  "country",
+  "population"
+];
