@@ -1,15 +1,19 @@
-interface City {
-  name: string;
-  country: string;
-  population: number;
+function printCity<Type>(city: Type): void {
+  console.log(city);
 }
 
-type CityProperties = keyof City;
+printCity<string>("London");
+printCity<number>(123);
 
-type CityProps = "name" | "city";
+type Country<Type> = {
+  name: Type;
+  capital: Type;
+};
 
-const cityProperties: CityProperties[] = [
-  "name",
-  "country",
-  "population"
-];
+const country: Country<string> = {
+  name: "France",
+  capital: "Paris"
+};
+
+console.log(country.name);
+console.log(country.capital);
