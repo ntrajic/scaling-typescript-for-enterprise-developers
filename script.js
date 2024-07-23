@@ -1,12 +1,9 @@
-var city3 = {
-    name: "Berlin",
-    country: "Germany"
-};
-var city4 = {
-    name: "Paris"
-};
-console.log(city4);
-var city5 = {
-    name: "Rome"
-};
-console.log(city5);
+var language = null;
+language = "Mandarin";
+console.log(language);
+function welcomeToCity(city) {
+    return "Welcome to ".concat(city);
+}
+console.log(welcomeToCity("Seoul"));
+console.log(welcomeToCity("Sydney"));
+console.log(welcomeToCity("Minneapolis"));

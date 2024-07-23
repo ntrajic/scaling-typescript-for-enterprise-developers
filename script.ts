@@ -1,27 +1,16 @@
-type City = {
-  name: string;
-  country: string;
-};
+type Language = string | null;
 
-type ReadonlyCity = Readonly<City>;
+let language: Language = null;
+language = "Mandarin";
 
-const city3: ReadonlyCity = {
-  name: "Berlin",
-  country: "Germany"
-};
+console.log(language);
 
-// city3.country = "UK";
+type CityName = "Seoul" | "Seattle" | "Sydney";
 
-type CityName = Pick<City, "name">;
-const city4: CityName = {
-  name: "Paris"
-};
+function welcomeToCity(city: CityName): string {
+  return `Welcome to ${city}`;
+}
 
-console.log(city4);
-
-type CityWithoutCountry = Omit<City, "country">;
-const city5: CityWithoutCountry = {
-  name: "Rome"
-};
-
-console.log(city5);
+console.log(welcomeToCity("Seoul"));
+console.log(welcomeToCity("Sydney"));
+console.log(welcomeToCity("Minneapolis"));
