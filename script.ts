@@ -15,7 +15,13 @@ type Poet = Person & { occupation: "Poet" };
 type Philosopher = Person & { occupation: "Philosopher" };
 type General = Person & { occupation: "General" };
 
-const egyptianCivilization = {
+type NotablePeople<PersonType> = PersonType extends Person
+  ? PersonType
+  : never;
+
+const egyptianCivilization: Civilization<
+  NotablePeople<Architect | Pharaoh>
+> = {
   name: "Egyptian",
   location: "Africa",
   notablePeople: [
@@ -30,7 +36,9 @@ const egyptianCivilization = {
   ]
 };
 
-const greekCivilization = {
+const greekCivilization: Civilization<
+  NotablePeople<Poet | Philosopher>
+> = {
   name: "Greek",
   location: "Europe",
   notablePeople: [
@@ -45,7 +53,9 @@ const greekCivilization = {
   ]
 };
 
-const romanCivilization = {
+const romanCivilization: Civilization<
+  NotablePeople<General | Poet>
+> = {
   name: "Roman",
   location: "Europe",
   notablePeople: [
