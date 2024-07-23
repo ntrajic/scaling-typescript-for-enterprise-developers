@@ -1,19 +1,44 @@
-function printCity<Type>(city: Type): void {
-  console.log(city);
-}
-
-printCity<string>("London");
-printCity<number>(123);
-
-type Country<Type> = {
-  name: Type;
-  capital: Type;
+const egyptianCivilization = {
+  name: "Egyptian",
+  location: "Africa",
+  notablePeople: [
+    {
+      name: "Cleopatra",
+      occupation: "Pharaoh"
+    },
+    {
+      name: "Imhotep",
+      occupation: "Architect"
+    }
+  ]
 };
 
-const country: Country<string> = {
-  name: "France",
-  capital: "Paris"
+const greekCivilization = {
+  name: "Greek",
+  location: "Europe",
+  notablePeople: [
+    {
+      name: "Homer",
+      occupation: "Poet"
+    },
+    {
+      name: "Socrates",
+      occupation: "Philosopher"
+    }
+  ]
 };
 
-console.log(country.name);
-console.log(country.capital);
+const romanCivilization = {
+  name: "Roman",
+  location: "Europe",
+  notablePeople: [
+    {
+      name: "Julius Caesar",
+      occupation: "General"
+    },
+    {
+      name: "Virgil",
+      occupation: "Poet"
+    }
+  ]
+};
