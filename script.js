@@ -53,10 +53,8 @@ function fetchVideo(id) {
         });
     });
 }
-fetchVideo(10)
-    .then(function (video) {
-    console.log("Video:", video);
-})
+fetchVideo(9)
+    .then(function (video) { return console.log("Video:", video); })
     .catch(function (error) {
-    console.error("Error fetching user:", error);
+    console.error("error fetching video"), error;
 });
