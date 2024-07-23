@@ -7,7 +7,7 @@ interface Creator {
   produced?: string[];
 }
 
-const authors: Creator[] = [
+const authors = [
   {
     firstName: "Harper",
     lastName: "Lee",
@@ -18,9 +18,9 @@ const authors: Creator[] = [
     lastName: "Huxley",
     authored: ["Brave New World", "The Doors of Perception"]
   }
-];
+] satisfies Creator[];
 
-const artists: Creator[] = [
+const artists = [
   {
     firstName: "Pink",
     lastName: "Floyd",
@@ -31,9 +31,9 @@ const artists: Creator[] = [
     lastName: "Dogg",
     created: ["Tha Doggfather", "Coolaid"]
   }
-];
+] satisfies Creator[];
 
-const directors: Creator[] = [
+const directors = [
   {
     firstName: "Christopher",
     lastName: "Nolan",
@@ -47,9 +47,9 @@ const directors: Creator[] = [
       "A Clockwork Orange"
     ]
   }
-];
+] satisfies Creator[];
 
-const producers: Creator[] = [
+const producers = [
   {
     firstName: "Emma",
     lastName: "Thomas",
@@ -60,14 +60,14 @@ const producers: Creator[] = [
     lastName: "Otto-Bernstein",
     produced: ["Absolute Wilson", "Beuys"]
   }
-];
+] satisfies Creator[];
 
-const creators: Record<string, Creator[]> = {
+const creators = {
   authors,
   artists,
   directors,
   producers
-};
+} satisfies Record<string, Creator[]>;
 
 for (let creator of creators.authors) {
   console.log(
