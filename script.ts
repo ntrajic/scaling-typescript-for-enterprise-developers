@@ -1,8 +1,8 @@
-import { formatCity, type City } from "./city.js";
+import { Cities } from "./city.js";
 
-const city: City = {
+const city: Cities.City = {
   name: "Toledo",
   country: "Spain"
 };
 
-console.log(formatCity(city));
+console.log(Cities.formatCity(city));

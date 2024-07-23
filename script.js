@@ -5,4 +5,4 @@ var city = {
     name: "Toledo",
     country: "Spain"
 };
-console.log((0, city_js_1.formatCity)(city));
+console.log(city_js_1.Cities.formatCity(city));
