@@ -16,7 +16,13 @@ type ThrillSeeker = Guest & {
   interest: "adrenaline sports";
 };
 
-const skiLesson = {
+type GuestWithActivity<GuestType> = GuestType extends Guest
+  ? GuestType
+  : never;
+
+const skiLesson: Activity<
+  GuestWithActivity<Skier | ThrillSeeker>
+> = {
   name: "Steeps Clinic",
   location: "Matterhorn Gondola",
   attendees: [
@@ -31,7 +37,7 @@ const skiLesson = {
   ]
 };
 
-const cookingClass = {
+const cookingClass: Activity<GuestWithActivity<Foodie>> = {
   name: "Thai Cooking Class",
   location: "West Kitchen",
   attendees: [
@@ -42,16 +48,17 @@ const cookingClass = {
   ]
 };
 
-const massage = {
-  name: "Hot Stone Massage",
-  location: "Lotus Spa Lounge",
-  attendees: [
-    {
-      name: "Jordan James",
-      interest: "spas"
-    }
-  ]
-};
+const massage: Activity<GuestWithActivity<SpaEnthusiast>> =
+  {
+    name: "Hot Stone Massage",
+    location: "Lotus Spa Lounge",
+    attendees: [
+      {
+        name: "Jordan James",
+        interest: "spas"
+      }
+    ]
+  };
 
 type HotelCategory = "gold" | "silver" | "bronze";
 

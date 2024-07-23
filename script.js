@@ -1,3 +1,37 @@
+var skiLesson = {
+    name: "Steeps Clinic",
+    location: "Matterhorn Gondola",
+    attendees: [
+        {
+            name: "Jessica Sweet",
+            interest: "skiing"
+        },
+        {
+            name: "Jason Williams",
+            interest: "adrenaline sports"
+        }
+    ]
+};
+var cookingClass = {
+    name: "Thai Cooking Class",
+    location: "West Kitchen",
+    attendees: [
+        {
+            name: "Leon Vida",
+            interest: "restaurants"
+        }
+    ]
+};
+var massage = {
+    name: "Hot Stone Massage",
+    location: "Lotus Spa Lounge",
+    attendees: [
+        {
+            name: "Jordan James",
+            interest: "spas"
+        }
+    ]
+};
 var Hotel = /** @class */ (function () {
     function Hotel(id, name, cost, category) {
         this.amenities = [];
@@ -14,7 +48,7 @@ var Hotel = /** @class */ (function () {
     };
     return Hotel;
 }());
-var peakLodge = new Hotel("06", "Peak Lodge", 250, "gold");
+var peakLodge = new Hotel("06", "Peak Lodge", 250, "silver");
 peakLodge.addAmenity("breakfast");
 peakLodge.addAmenity("wifi");
 var description = peakLodge.describeHotel();
