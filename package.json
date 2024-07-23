@@ -10,11 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.14.10",
     "typescript": "^5.5.3"
-  },
-  "devDependencies": {
-    "@total-typescript/tsconfig": "^1.0.4",
-    "jsdoc": "^4.0.3"
   }
 }

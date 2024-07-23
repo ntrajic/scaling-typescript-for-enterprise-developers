@@ -1,35 +1,107 @@
-interface Video {
-  id: string;
-  video_url: string;
+interface Activity<AttendeeType> {
   name: string;
-  description: string;
-  duration: string;
-  created_by: string;
-  image: string;
-  thumbnail: string;
-  cropped: string;
-  file_name_original: string;
-  popularity: string;
-  category_id: string;
-  category: string;
-  keywords: string;
+  location: string;
+  attendees: AttendeeType[];
 }
 
-async function fetchVideo(id: number): Promise<Video> {
-  const response = await fetch(
-    `https://orangevalleycaa.org/api/videos/id/${id}`
-  );
-  if (!response.ok) {
-    throw new Error(
-      "Network response was not ok" + response.statusText
-    );
+interface Guest {
+  name: string;
+  interest: string;
+}
+
+type Skier = Guest & { interest: "skiing" };
+type SpaEnthusiast = Guest & { interest: "spas" };
+type Foodie = Guest & { interest: "restaurants" };
+type ThrillSeeker = Guest & {
+  interest: "adrenaline sports";
+};
+
+type GuestWithActivity<GuestType> = GuestType extends Guest
+  ? GuestType
+  : never;
+
+const skiLesson: Activity<
+  GuestWithActivity<Skier | ThrillSeeker>
+> = {
+  name: "Steeps Clinic",
+  location: "Matterhorn Gondola",
+  attendees: [
+    {
+      name: "Jessica Sweet",
+      interest: "skiing"
+    },
+    {
+      name: "Jason Williams",
+      interest: "adrenaline sports"
+    }
+  ]
+};
+
+const cookingClass: Activity<GuestWithActivity<Foodie>> = {
+  name: "Thai Cooking Class",
+  location: "West Kitchen",
+  attendees: [
+    {
+      name: "Leon Vida",
+      interest: "restaurants"
+    }
+  ]
+};
+
+const massage: Activity<GuestWithActivity<SpaEnthusiast>> =
+  {
+    name: "Hot Stone Massage",
+    location: "Lotus Spa Lounge",
+    attendees: [
+      {
+        name: "Jordan James",
+        interest: "spas"
+      }
+    ]
+  };
+
+type HotelCategory = "gold" | "silver" | "bronze";
+
+class Hotel {
+  readonly id: string;
+  readonly name: string;
+  cost: number;
+  amenities: string[] = [];
+  category: HotelCategory;
+
+  constructor(
+    id: string,
+    name: string,
+    cost: number,
+    category: HotelCategory
+  ) {
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.category = category;
   }
-  const video: Video = await response.json();
-  return video;
+
+  addAmenity(amenity: string) {
+    this.amenities.push(amenity);
+  }
+  describeHotel(): string {
+    return `The ${this.category} category ${
+      this.name
+    } costs $${
+      this.cost
+    } and includes the following amenities: ${this.amenities.join(
+      ", "
+    )}.`;
+  }
 }
 
-fetchVideo(9)
-  .then((video) => console.log("Video:", video))
-  .catch((error) => {
-    console.error("error fetching video"), error;
-  });
+const peakLodge = new Hotel(
+  "06",
+  "Peak Lodge",
+  250,
+  "silver"
+);
+peakLodge.addAmenity("breakfast");
+peakLodge.addAmenity("wifi");
+let description = peakLodge.describeHotel();
+console.log(description);
