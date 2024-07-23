@@ -27,3 +27,14 @@ let oak: OakTree = {
 console.log(`Name: ${oak.getName()}`);
 console.log(`Height: ${oak.getHeight()}`);
 console.log(`Age: ${oak.getAge()}`);
+
+type PartialTree<Type> = {
+  [Key in keyof Type]+?: Type[Key];
+};
+
+type PartialOak = PartialTree<Tree>;
+
+let partialOak: PartialOak = {
+  name: "Oak"
+};
+console.log(partialOak);

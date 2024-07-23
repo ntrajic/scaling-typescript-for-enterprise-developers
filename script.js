@@ -11,3 +11,7 @@ var oak = {
 console.log("Name: ".concat(oak.getName()));
 console.log("Height: ".concat(oak.getHeight()));
 console.log("Age: ".concat(oak.getAge()));
+var partialOak = {
+    name: "Oak"
+};
+console.log(partialOak);
