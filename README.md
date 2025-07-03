@@ -38,3 +38,66 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
 
+
+# Github MCP server
+
+            1. Edit content vim ~/.gemini/settings.json  :
+
+            {
+                "theme": "GitHub",
+                "selectedAuthType": "gemini-api-key",
+                "mcpServers": {
+                    "github_mcp": {
+                    "command": "npx",
+                    "args": ["-y", "@modelcontextprotocol/server-github"],
+                    "env": {
+                        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+                    },
+                    "timeout": 30000,
+                    "trust": true
+                    }
+                }
+            }
+
+# Install Github MCP Tools
+
+            2. Install GitHub MCP server packages:
+
+            bash
+            npm install -g @modelcontextprotocol/server-github
+
+# List github_mcp packages from gemin:
+
+            3.   > /mcp  │
+╰──────────╯
+
+
+            ℹ Configured MCP servers:
+            
+            🟢 github_mcp - Ready (26 tools)
+                - create_or_update_file
+                - search_repositories
+                - create_repository
+                - get_file_contents
+                - push_files
+                - create_issue
+                - create_pull_request
+                - fork_repository
+                - create_branch
+                - list_commits
+                - list_issues
+                - update_issue
+                - add_issue_comment
+                - search_code
+                - search_issues
+                - search_users
+                - get_issue
+                - get_pull_request
+                - list_pull_requests
+                - create_pull_request_review
+                - merge_pull_request
+                - get_pull_request_files
+                - get_pull_request_status
+                - update_pull_request_branch
+                - get_pull_request_comments
+                - get_pull_request_reviews
