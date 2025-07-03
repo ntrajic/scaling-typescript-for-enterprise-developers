@@ -42,3 +42,4 @@ const romanCivilization = {
     }
   ]
 };
+console.log("we're ready...")

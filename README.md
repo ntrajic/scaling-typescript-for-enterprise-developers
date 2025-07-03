@@ -38,3 +38,27 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
 
+# install typescript to 00_03b branch
+        npm install typescript --save  <enter>
+
+        npm run build     <enter>
+
+        nps tsc --version <enter>
+        OUT:
+        Version 5.8.3
+
+# test compilation
+
+        npx tsc script.ts <enter>  
+        OUT: script.js
+
+        node script.js <enter>
+
+# gemini instructed execution
+
+         Shell node script.js (Running the compiled script.js file with Nodejs.)                                                                                                │
+         │                                                                                                                                                                      │
+         │    we'reready...                                                                                                                                                          │
+         │                                                                                                                                                                      │
+         ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+         ✦ The script ran successfully and output "we're ready...".
