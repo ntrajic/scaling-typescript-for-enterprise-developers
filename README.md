@@ -96,6 +96,21 @@ The original code had repetitive loops for logging different types of creators. 
 
 ```
 
+# testing the refactored code
+
+@ntrajic ➜ /workspaces/scaling-typescript-for-enterprise-developers (05_01b) $ npx tsc script.ts
+@ntrajic ➜ /workspaces/scaling-typescript-for-enterprise-developers (05_01b) $ node script.js
+OUT:
+Harper Lee is a author who helped create To Kill a Mockingbird, Go Set a Watchman
+Aldous Huxley is a author who helped create Brave New World, The Doors of Perception
+Pink Floyd is a artist who helped create The Dark Side of the Moon, The Wall
+Snoop Dogg is a artist who helped create Tha Doggfather, Coolaid
+Christopher Nolan is a director who helped create Inception, Interstellar
+Stanley Kubrick is a director who helped create 2001: A Space Odyssey, A Clockwork Orange
+Emma Thomas is a producer who helped create Inception, Interstellar
+Katharina Otto-Bernstein is a producer who helped create Absolute Wilson, Beuys
+
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
