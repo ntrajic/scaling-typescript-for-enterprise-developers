@@ -1,6 +1,6 @@
-type HotelCategory = "gold" | "silver" | "bronze";
+export type HotelCategory = "gold" | "silver" | "bronze";
 
-class Hotel {
+export class Hotel {
   readonly id: string;
   readonly name: string;
   cost: number;
