@@ -60,3 +60,32 @@ Type Errors  no errors
 
  PASS  Waiting for file changes...
        press h to show help, press q to quit
+
+### new matchers
+
+
+@ntrajic ➜ /workspaces/scaling-typescript-for-enterprise-developers (05_04b) $ npm test
+
+> 00_03b@1.0.0 test
+> vitest
+
+The CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+
+ DEV  v2.0.2 /workspaces/scaling-typescript-for-enterprise-developers
+
+ ✓ src/script.test-d.ts (2)
+   ✓ printCity (1)
+     ✓ Should return the city name and country
+   ✓ my types re working as expected
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+Type Errors  no errors
+   Start at  07:26:54
+   Duration  1.94s (transform 0ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 0ms, typecheck 1.88s)
+
+
+ PASS  Waiting for file changes...
+       press h to show help, press q to quit

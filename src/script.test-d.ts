@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, assertType, expectTypeOf, test } from "vitest";
 import { printCity, type City } from "./script";
 
 describe("printCity", () => {
@@ -11,3 +11,7 @@ describe("printCity", () => {
     expect(result).toBe("San Francisco, USA");
   });
 });
+
+test("my types re working as expected", () => {
+  expectTypeOf(printCity).toBeFunction()
+    });
