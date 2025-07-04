@@ -4,17 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.14.10",
-    "typescript": "^5.5.3"
+    "@types/node": "^20.14.10"
   },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
-    "jsdoc": "^4.0.3"
+    "jsdoc": "^4.0.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   }
 }

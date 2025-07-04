@@ -5,6 +5,64 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
 
+### Testing with Vitest
+
+Vitest is a fast and modern testing framework that is a great choice for testing TypeScript code.
+
+**Installation:**
+
+1.  Install Vitest as a development dependency:
+    ```bash
+    npm install -D vitest
+    ```
+2.  Update the `test` script in your `package.json` to run Vitest:
+    ```json
+    "scripts": {
+      "test": "vitest"
+    }
+    ```
+
+**Writing Tests:**
+
+*   **File Naming:** Test files are typically named with a `.test.ts` or `.spec.ts` extension (e.g., `script.test.ts`).
+*   **Basic Structure:**
+    ```typescript
+    import { describe, it, expect } from 'vitest';
+    import { myFunction } from './myFunction'; // Import the code to test
+
+    describe('myFunction', () => {
+      it('should do something', () => {
+        // 1. Arrange
+        const input = 'test';
+        const expectedOutput = 'TEST';
+
+        // 2. Act
+        const result = myFunction(input);
+
+        // 3. Assert
+        expect(result).toBe(expectedOutput);
+      });
+    });
+    ```
+*   **Key Functions:**
+    *   `describe(name, fn)`: Creates a block that groups together several related tests.
+    *   `it(name, fn)` or `test(name, fn)`: This is the test case itself.
+    *   `expect(value)`: Creates an assertion. You chain this with "matcher" functions.
+*   **Common Matchers:**
+    *   `.toBe(value)`: Strict equality (`===`).
+    *   `.toEqual(value)`: Deep equality for objects and arrays.
+    *   `.toBeTruthy()` / `.toBeFalsy()`: Checks for truthiness or falsiness.
+    *   `.toContain(item)`: Checks if an array or string contains an item.
+    *   `.toThrow()`: Checks if a function throws an error.
+
+**Running Tests:**
+
+To run your tests, simply run the `test` script from your terminal:
+
+```bash
+npm test
+```
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -37,4 +95,3 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
-
