@@ -4,6 +4,19 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 _See the readme file in the main branch for updated instructions and information._
 
+## Capstone Project - Part 2: Key Concepts  N. Trajic w. a little help of GeminiCLI
+
+This capstone project brings together several fundamental TypeScript and Object-Oriented Programming (OOP) concepts to create a well-structured and type-safe `Hotel` class.
+
+**Key Concepts Demonstrated:**
+
+1.  **Classes:** The code defines a `Hotel` class, which acts as a blueprint for creating hotel objects. This encapsulates the data (properties) and behavior (methods) related to a hotel.
+2.  **Properties and Methods:** The class has properties like `id`, `name`, and `cost` to store data, and methods like `addAmenity` and `describeHotel` to perform actions.
+3.  **`readonly` Properties:** The `id` and `name` properties are marked as `readonly`. This is a key TypeScript feature that ensures these properties can only be assigned a value when the object is first created (in the constructor) and cannot be changed later. This is great for properties that should be immutable.
+4.  **Constructor:** The `constructor` method initializes new instances of the `Hotel` class, setting the initial values for its properties.
+5.  **Type Aliases and Literal Unions:** The `HotelCategory` type is a literal union (`"gold" | "silver" | "bronze"`). This is a powerful feature that restricts the `category` property to only one of these three specific strings, preventing errors from invalid category names.
+6.  **Instantiation and Usage:** The code demonstrates how to create a new `Hotel` object (`const peakLodge = new Hotel(...)`), call its methods (`peakLodge.addAmenity(...)`), and use the output.
+
 ## Instructions
 
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -31,4 +44,5 @@ Commit changes using this command: git commit -m "some message"
 
 [0]: # "Replace these placeholder URLs with actual course URLs"
 [lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+[lil-thumbnail-url]: http/
+
