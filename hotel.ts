@@ -1,6 +1,6 @@
-type HotelCategory = "gold" | "silver" | "bronze";
+export type HotelCategory = "gold" | "silver" | "bronze";
 
-class Hotel {
+export class Hotel {
   readonly id: string;
   readonly name: string;
   cost: number;
@@ -32,14 +32,3 @@ class Hotel {
     )}.`;
   }
 }
-
-const peakLodge = new Hotel(
-  "06",
-  "Peak Lodge",
-  250,
-  "silver"
-);
-peakLodge.addAmenity("breakfast");
-peakLodge.addAmenity("wifi");
-let description = peakLodge.describeHotel();
-console.log(description);

@@ -5,6 +5,42 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
 
+### Capstone Project 4: Modularization and Testing
+
+In this capstone, we've modularized our code and added unit tests using Jest to verify the new structure.
+
+**Key Steps:**
+
+1.  **Modularization:**
+    *   Guest-related types (`Guest`, `Skier`, `SpaEnthusiast`, `Foodie`, `ThrillSeeker`, `GuestWithActivity`) were moved to `guests.ts`.
+    *   Activity-related code (`Activity` interface, `skiLesson`, `cookingClass`, `massage`) was moved to `activities.ts`.
+    *   Necessary types are exported from `guests.ts` and imported into `activities.ts`.
+2.  **Jest Installation:** We installed `jest`, `@types/jest`, and `ts-jest` to enable testing of our TypeScript code.
+3.  **Jest Configuration:** A `jest.config.js` file was created to configure Jest to use the `ts-jest` preset.
+4.  **Test Script:** An npm script, `"test": "jest"`, was added to `package.json` for easy test execution.
+5.  **Unit Tests:** A test file, `capstone.test.ts`, was created to house the unit tests for the new modularized code.
+
+**Test Cases:**
+
+The following test cases were implemented to verify the functionality of the modularized code:
+
+*   `should have a ski lesson with the correct attendees`
+*   `should have a cooking class with the correct attendees`
+*   `should have a massage with the correct attendees`
+
+All tests are passing, ensuring the modularized code is working as expected.
+
+```bash
+PASS ./capstone.test.ts
+PASS ./script.test.ts
+
+Test Suites: 2 passed, 2 total
+Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        2.514 s, estimated 4 s
+Ran all test suites.
+```
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -37,4 +73,3 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
-
