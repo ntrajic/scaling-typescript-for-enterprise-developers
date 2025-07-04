@@ -1,22 +1,28 @@
-interface Activity<AttendeeType> {
+export interface Activity<AttendeeType> {
   name: string;
   location: string;
   attendees: AttendeeType[];
 }
 
-interface Guest {
+export interface Guest {
   name: string;
   interest: string;
 }
 
-type Skier = Guest & { interest: "skiing" };
-type SpaEnthusiast = Guest & { interest: "spas" };
-type Foodie = Guest & { interest: "restaurants" };
-type ThrillSeeker = Guest & {
+export type Skier = Guest & { interest: "skiing" };
+export type SpaEnthusiast = Guest & { interest: "spas" };
+export type Foodie = Guest & { interest: "restaurants" };
+export type ThrillSeeker = Guest & {
   interest: "adrenaline sports";
 };
 
-const skiLesson = {
+export type GuestWithActivity<GuestType> = GuestType extends Guest
+  ? GuestType
+  : never;
+
+export const skiLesson: Activity<
+  GuestWithActivity<Skier | ThrillSeeker>
+> = {
   name: "Steeps Clinic",
   location: "Matterhorn Gondola",
   attendees: [
@@ -31,7 +37,7 @@ const skiLesson = {
   ]
 };
 
-const cookingClass = {
+export const cookingClass: Activity<GuestWithActivity<Foodie>> = {
   name: "Thai Cooking Class",
   location: "West Kitchen",
   attendees: [
@@ -42,20 +48,21 @@ const cookingClass = {
   ]
 };
 
-const massage = {
-  name: "Hot Stone Massage",
-  location: "Lotus Spa Lounge",
-  attendees: [
-    {
-      name: "Jordan James",
-      interest: "spas"
-    }
-  ]
-};
+export const massage: Activity<GuestWithActivity<SpaEnthusiast>> =
+  {
+    name: "Hot Stone Massage",
+    location: "Lotus Spa Lounge",
+    attendees: [
+      {
+        name: "Jordan James",
+        interest: "spas"
+      }
+    ]
+  };
 
-type HotelCategory = "gold" | "silver" | "bronze";
+export type HotelCategory = "gold" | "silver" | "bronze";
 
-class Hotel {
+export class Hotel {
   readonly id: string;
   readonly name: string;
   cost: number;
@@ -80,7 +87,7 @@ class Hotel {
   describeHotel(): string {
     return `The ${this.category} category ${
       this.name
-    } costs $${
+    } costs ${
       this.cost
     } and includes the following amenities: ${this.amenities.join(
       ", "
@@ -88,7 +95,7 @@ class Hotel {
   }
 }
 
-const peakLodge = new Hotel(
+export const peakLodge = new Hotel(
   "06",
   "Peak Lodge",
   250,
