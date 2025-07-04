@@ -38,3 +38,55 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
 
+# conditional statement in type script, a type guard example
+
+        One way to use a type guard in a class is a conditional statement. Type guards are commonly implemented using conditional statements (such as if statements) to check the type or properties of a variable at runtime, allowing TypeScript to narrow the type within that block. For example, you might define a class method that acts as a user-defined type guard and use it inside an if statement to refine the type of this or another object.
+
+        Here’s a simple example of using a type guard in a class with a conditional statement in TypeScript:
+
+        typescript
+        class Animal {
+        name: string;
+        constructor(name: string) {
+            this.name = name;
+        }
+        }
+
+        class Dog extends Animal {
+        bark() {
+            console.log("Woof!");
+        }
+        }
+
+        class Cat extends Animal {
+        meow() {
+            console.log("Meow!");
+        }
+        }
+
+        // Type guard function  <<<<<<<<<
+        function isDog(animal: Animal): animal is Dog {
+        return animal instanceof Dog;
+        }
+
+        // Usage in a method with a conditional statement
+        function makeSound(animal: Animal) {
+        if (isDog(animal)) { // <-- type guard used in a conditional statement
+            animal.bark();     // TypeScript knows animal is a Dog here
+        } else if (animal instanceof Cat) {
+            animal.meow();
+        }
+        }
+
+        const dog = new Dog("Rex");
+        const cat = new Cat("Whiskers");
+
+        makeSound(dog); // Output: Woof!
+        makeSound(cat); // Output: Meow!
+
+        Explanation:
+
+        The isDog function is a type guard that checks if an Animal is actually a Dog.
+        In the makeSound function, a conditional statement (if (isDog(animal))) is used to narrow the type.
+        Inside the if block, TypeScript knows animal is a Dog, so you can safely call bark().
+        This is a classic way to use a type guard with a conditional statement in a class-based TypeScript program.
