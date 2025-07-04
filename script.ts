@@ -69,56 +69,17 @@ const creators: Record<string, Creator[]> = {
   producers
 };
 
-for (let creator of creators.authors) {
-  console.log(
-    `${creator.firstName} ${
-      creator.lastName
-    } is an author who wrote the books ${creator.authored.join(
-      ", "
-    )}`
-  );
-}
-
-for (let creator of creators.artists) {
-  console.log(
-    `${creator.firstName} ${
-      creator.lastName
-    } is an artist who created the albums ${creator.created.join(
-      ", "
-    )}`
-  );
-}
-
-for (let creator of creators.directors) {
-  console.log(
-    `${creator.firstName} ${
-      creator.lastName
-    } is a director who directed the movies ${creator.directed.join(
-      ", "
-    )}`
-  );
-}
-
-for (let creator of creators.producers) {
-  console.log(
-    `${creator.firstName} ${
-      creator.lastName
-    } is a producer who produced the movies ${creator.produced.join(
-      ", "
-    )}`
-  );
-}
-
-const filmCreators: Creator[] = [
-  ...directors,
-  ...producers
-];
-
-for (let creator of filmCreators) {
+function logCreator(creator: Creator) {
   let creatorType = "<unknown>";
   let created: string[] = [];
 
-  if (Array.isArray(creator.directed)) {
+  if (Array.isArray(creator.authored)) {
+    creatorType = "author";
+    created = creator.authored;
+  } else if (Array.isArray(creator.created)) {
+    creatorType = "artist";
+    created = creator.created;
+  } else if (Array.isArray(creator.directed)) {
     creatorType = "director";
     created = creator.directed;
   } else if (Array.isArray(creator.produced)) {
@@ -133,4 +94,10 @@ for (let creator of filmCreators) {
       ", "
     )}`
   );
+}
+
+for (let creatorKey in creators) {
+  for (let creator of creators[creatorKey]) {
+    logCreator(creator);
+  }
 }
