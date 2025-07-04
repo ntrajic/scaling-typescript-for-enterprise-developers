@@ -38,3 +38,19 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
 
+#  typeof object - how is used:
+
+        That line of code is a great example of TypeScript's ability to create new types from existing ones. Let's break it down:
+
+
+        1. `typeof city2`: This is a type query. It tells TypeScript to look at the city2 object and create a type that represents its shape. In this case, the shape of city2 is { name: string; country: string; }. So, typeof city2 is a stand-in for that type definition.
+        2. `&`: This is the intersection operator. It's used to combine two or more types into a single new type that has all the properties of the original types.
+        3. `{ nickname: string; }`: This is an anonymous or "inline" type definition for an object that must have a nickname property of type string.
+        In simple terms, the line:
+        
+        1 type CityWithNickname = typeof city2 & { nickname: string; };
+        
+        is creating a new type alias called CityWithNickname. 
+        This new type is a combination of the type of city2 and a new requirement for a nickname.
+
+        The purpose is to create a new, more specific type that has all the properties of city2 (name and country) plus a new nickname property, without having to manually write out all the properties again. It's a concise way to extend existing types.
