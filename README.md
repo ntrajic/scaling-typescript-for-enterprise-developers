@@ -5,6 +5,21 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
 
+### Key Concepts: Union Types, N.Trajic w/ a help of GeminiCLI
+
+1.  **What are Union Types?**
+    A union type allows a variable, parameter, or return value to be one of several distinct types. It's created using the `|` symbol (e.g., `string | number`).
+
+2.  **Use Case: Allowing Multiple Types**
+    The first use case is to allow a variable to hold different types of values. In the example, `type Language = string | null;` creates a type that can be either a `string` or `null`. This is very useful for values that might be optional or uninitialized.
+
+3.  **Use Case: Restricting Values with Literal Unions**
+    A more powerful use case is creating a "literal union type". This restricts a variable to a specific set of predefined literal values. In the example, `type CityName = "Seoul" | "Seattle" | "Sydney";` ensures that the `welcomeToCity` function can *only* be called with one of those three exact strings. This prevents typos and invalid inputs, providing excellent type safety. If you try to call it with `"Minneapolis"`, TypeScript will show a compile-time error.
+
+4.  **Other Common Use Cases:**
+    *   Modeling different states, like `type Status = "loading" | "success" | "error";`.
+    *   Accepting different but related object shapes in a function or an array.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
