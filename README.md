@@ -75,6 +75,19 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
+
+### The easiest way to install the Total TypeScript configuration file is to npm install it as a development dependency.
+
+        bash
+            npm install --save-dev @total-typescript/tsconfig
+
+        After installing, you can extend the configuration in your tsconfig.json like this:
+
+            json
+            {
+                "extends": "@total-typescript/tsconfig/bundler/dom/app"
+            }
+
 ### Instructor
 
 Eve Porcello
