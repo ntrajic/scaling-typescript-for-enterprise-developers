@@ -38,3 +38,25 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
 
+### vitest running 
+
+@ntrajic ➜ /workspaces/scaling-typescript-for-enterprise-developers (05_04b) $ npx vitest
+The CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+
+ DEV  v2.0.2 /workspaces/scaling-typescript-for-enterprise-developers
+
+ ✓ src/script.test-d.ts (1)
+   ✓ printCity (1)
+     ✓ Should return the city name and country
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+Type Errors  no errors
+   Start at  07:06:13
+   Duration  2.07s (transform 0ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 0ms, typecheck 2.01s)
+
+
+ PASS  Waiting for file changes...
+       press h to show help, press q to quit
