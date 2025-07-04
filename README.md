@@ -5,6 +5,14 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
 
+### Key Concepts: `tsconfig.json` and Declaration Files     B.Trajic instructed GeminCLI
+
+*   **Creating `tsconfig.json`**: This file is the configuration file for a TypeScript project. It allows you to control how the compiler behaves. You can create one by running `npx tsc --init`. This will generate a `tsconfig.json` file with a lot of commented-out options that you can customize.
+
+*   **`@total-typescript/tsconfig`**: This is a package that provides a set of pre-configured `tsconfig.json` files for common scenarios (e.g., a web app, a Node.js library). It simplifies the process of setting up a `tsconfig.json` file by allowing you to extend a base configuration that is already optimized for your use case. You would use it like this in your `tsconfig.json`: `"extends": "@total-typescript/tsconfig/bundler/dom/app"`.
+
+*   **Declaration Files (`.d.ts`)**: These are special files in TypeScript that don't contain any code. Instead, they contain *type definitions*. Their purpose is to describe the shape of JavaScript code to TypeScript. This is how TypeScript can understand JavaScript libraries that weren't written in TypeScript. For example, if you use a JavaScript library that has a function called `doSomething`, a `.d.ts` file would tell TypeScript what arguments `doSomething` expects and what it returns. This is what allows you to get type checking and autocompletion for JavaScript code.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
