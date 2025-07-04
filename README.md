@@ -7,7 +7,11 @@ Looking to elevate your coding skills from simple type annotations to sophistica
 
 ### Testing with Vitest
 
-Vitest is a fast and modern testing framework that is a great choice for testing TypeScript code.
+There are two main approaches to setting up Vitest in a TypeScript project: a simple, standalone setup and a more integrated approach using Vite.
+
+**1. Simple Vitest Setup**
+
+This approach is quick and easy, and it's a great way to get started with Vitest.
 
 **Installation:**
 
@@ -22,32 +26,70 @@ Vitest is a fast and modern testing framework that is a great choice for testing
     }
     ```
 
+**2. Integrated Setup with Vite (Eve Porcello's Approach)**
+
+This approach, demonstrated by Eve Porcello in the course, uses Vite to configure and run Vitest. This provides a more powerful and integrated testing experience, including features like type-checking.
+
+**Key Components of the Setup:**
+
+*   **`vitest`:** The core testing framework.
+*   **`vite`:** A build tool that provides a fast and lean development experience. Vitest is built on top of Vite and uses its configuration.
+*   **`@total-typescript/tsconfig`:** A dependency that provides a base `tsconfig.json` for TypeScript projects.
+
+**Installation:**
+
+1.  Install the necessary dependencies:
+    ```bash
+    npm install -D vitest vite @total-typescript/tsconfig
+    ```
+
+**Configuration (`vite.config.js`):**
+
+Create a `vite.config.js` file in the root of your project:
+
+```javascript
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  test: {
+    typecheck: {
+      enabled: true
+    },
+    globals: true,
+    environment: "node"
+  }
+});
+```
+
+*   **`typecheck: { enabled: true }`:** This is a crucial setting that tells Vitest to perform type-checking during the test run.
+*   **`globals: true`:** This makes the Vitest APIs (`describe`, `it`, `expect`, etc.) available globally in your test files.
+*   **`environment: "node"`:** This specifies that the tests will be run in a Node.js environment.
+
 **Writing Tests:**
 
-*   **File Naming:** Test files are typically named with a `.test.ts` or `.spec.ts` extension (e.g., `script.test.ts`).
+The way you write tests is the same for both setups.
+
+*   **File Naming:** Test files are typically named with a `.test.ts` or `.spec.ts` extension.
 *   **Basic Structure:**
     ```typescript
     import { describe, it, expect } from 'vitest';
-    import { myFunction } from './myFunction'; // Import the code to test
+    import { myFunction } from './myFunction';
 
     describe('myFunction', () => {
       it('should do something', () => {
-        // 1. Arrange
         const input = 'test';
         const expectedOutput = 'TEST';
-
-        // 2. Act
         const result = myFunction(input);
-
-        // 3. Assert
         expect(result).toBe(expectedOutput);
       });
     });
     ```
+
 *   **Key Functions:**
     *   `describe(name, fn)`: Creates a block that groups together several related tests.
     *   `it(name, fn)` or `test(name, fn)`: This is the test case itself.
     *   `expect(value)`: Creates an assertion. You chain this with "matcher" functions.
+
 *   **Common Matchers:**
     *   `.toBe(value)`: Strict equality (`===`).
     *   `.toEqual(value)`: Deep equality for objects and arrays.
@@ -57,7 +99,7 @@ Vitest is a fast and modern testing framework that is a great choice for testing
 
 **Running Tests:**
 
-To run your tests, simply run the `test` script from your terminal:
+For both setups, you run the tests with the same command:
 
 ```bash
 npm test
