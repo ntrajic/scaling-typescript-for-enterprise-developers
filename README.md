@@ -5,6 +5,27 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
 
+### Key Concepts: Partial Mapped Types
+
+This exercise builds on the previous one by introducing the concept of **partial mapped types**. This is a way to create a new type where all of the properties of the original type are optional.
+
+**Use Case in `script.ts`:**
+
+*   **`type PartialTree<Type> = { [Key in keyof Type]+?: Type[Key]; };`**: This is the core of the example.
+    *   `[Key in keyof Type]` iterates over all the keys of the input type `Type`.
+    *   `+?`: This is the "mapped type modifier". The `+` is the default, but the `?` makes the property optional.
+    *   `Type[Key]`: This is the type of the property.
+*   **`type PartialOak = PartialTree<Tree>;`**: This creates a new type `PartialOak` where all the properties of `Tree` (`name`, `height`, and `age`) are optional.
+*   **`let partialOak: PartialOak = { name: "Oak" };`**: This demonstrates that you can create an object of type `PartialOak` with only some of the properties of `Tree`.
+
+**Key Points:**
+
+*   **Partial Mapped Types:** This is a powerful way to create a new type where all of the properties of the original type are optional. This is very useful when you want to create an object that only has some of the properties of another type, for example, when you are updating an object and only want to provide the properties that are changing.
+*   **Mapped Type Modifiers:** The `+?` is a "mapped type modifier". You can also use `-?` to remove the optional modifier from a property.
+*   **`Partial<T>` Utility Type:** TypeScript has a built-in utility type called `Partial<T>` that does exactly what the `PartialTree` type in this example does. It's a good practice to use the built-in utility types when they are available, as they are well-tested and make your code more readable.
+
+**Overall, this exercise shows how to use mapped types to create new types with optional properties, which is a very common and useful pattern in TypeScript.**
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
