@@ -5,6 +5,28 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
 
+### Key Concepts: Remapping with `keyof`  N.Trajic w/ a little help of GeminiCLI:
+
+The `keyof` operator is a powerful tool for working with types in a more dynamic and flexible way. It takes an object type and creates a new union type consisting of the literal string values of its keys.
+
+For example:
+```typescript
+interface City {
+  name: string;
+  country: string;
+  population: number;
+}
+
+type CityProperties = keyof City; 
+// CityProperties is now equivalent to "name" | "country" | "population"
+```
+
+This is incredibly useful for:
+
+*   **Creating type-safe functions that operate on object properties:** You can write a function that takes an object and a key of that object, and TypeScript will ensure that the key is valid for the given object.
+*   **Building flexible and reusable components:** In frameworks like React, you might have a component that can display different properties of an object. `keyof` can be used to ensure that the component is only asked to display properties that actually exist.
+*   **Enforcing consistency:** By using `keyof`, you can ensure that different parts of your code that refer to the properties of a type are all using the same set of valid keys.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
