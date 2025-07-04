@@ -5,6 +5,59 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
 
+### Key Concepts: Async/Await for Data Fetching
+
+This exercise demonstrates how to use `async/await` to fetch data from an API in a more readable and synchronous-looking way.
+
+**TypeScript Code:**
+
+```typescript
+interface Video {
+  id: string;
+  video_url: string;
+  name: string;
+  description: string;
+  duration: string;
+  created_by: string;
+  image: string;
+  thumbnail: string;
+  cropped: string;
+  file_name_original: string;
+  popularity: string;
+  category_id: string;
+  category: string;
+  keywords: string;
+}
+
+async function fetchVideo(id: number): Promise<Video> {
+  const response = await fetch(
+    `https://orangevalleycaa.org/api/videos/id/${id}`
+  );
+  if (!response.ok) {
+    throw new Error(
+      "Network response was not ok" + response.statusText
+    );
+  }
+  const video: Video = await response.json();
+  return video;
+}
+
+fetchVideo(9)
+  .then((video) => console.log("Video:", video))
+  .catch((error) => {
+    console.error("error fetching video"), error;
+  });
+```
+
+**Key Concepts:**
+
+*   **`async` function:** The `fetchVideo` function is declared with the `async` keyword. This means the function will always return a `Promise`.
+*   **`await` keyword:** Inside an `async` function, you can use the `await` keyword to pause the execution of the function until a `Promise` is settled (either resolved or rejected). This allows you to write asynchronous code that looks more like synchronous code, avoiding "callback hell" or long chains of `.then()`.
+*   **Error Handling:** The `try...catch` block is the standard way to handle errors in `async/await` code. However, in this example, we are using the `.catch()` method on the promise returned by `fetchVideo`.
+*   **Type Safety:** By defining the `Video` interface and using it as the return type of the `fetchVideo` function, we ensure that the data we get from the API conforms to the expected shape.
+
+**Overall, this exercise demonstrates a more modern and readable way to handle asynchronous operations in TypeScript, making the code easier to write and maintain.**
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -37,4 +90,3 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
-
