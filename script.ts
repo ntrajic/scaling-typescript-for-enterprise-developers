@@ -3,16 +3,25 @@ type City = {
   country: string;
 };
 
-type PartialCity = Partial<City>;
+type ReadonlyCity = Readonly<City>;
 
-const city1: PartialCity = {
-  name: "Istanbul"
+const city3: ReadonlyCity = {
+  name: "Berlin",
+  country: "Germany"
 };
 
-type RequiredCity = Required<City>;
-const city2: RequiredCity = {
-  name: "Barcelona",
-  country: "Spain"
+// city3.country = "UK";
+
+type CityName = Pick<City, "name">;
+const city4: CityName = {
+  name: "Paris"
 };
 
-console.log(city2);
+console.log(city4);
+
+type CityWithoutCountry = Omit<City, "country">;
+const city5: CityWithoutCountry = {
+  name: "Rome"
+};
+
+console.log(city5);

@@ -4,6 +4,11 @@ This is the repository for the LinkedIn Learning course Scaling TypeScript for E
 ![lil-thumbnail-url]
 
 Looking to elevate your coding skills from simple type annotations to sophisticated data modeling and API integration? Join instructor Eve Porcello to boost your understanding of TypeScript's core principles, such as classes and interfaces as well as complex concepts like generics and utility types. Learn to construct robust and type-safe applications by managing code structure through namespaces, modules, and data models. Gain practical experience with hands-on coding capstone projects that simulate real-world programming challenges. Learn how to write cleaner, more efficient code as well as how to debug, test, and automate projects using tools like Vitest and VS Code. Whether you're a developer looking to transition to TypeScript, enhance your existing skills, or a student eager to explore typed JavaScript, this course offers valuable insights and skills that can help you become a proficient TypeScript developer.
+Nikola Traji added via geminiCLI chat.
+Here are some useful TypeScript utility types:
+*   **`Readonly<City>`**: This is a utility type that takes the `City` type and makes all of its properties `readonly`. This means that once an object of type `Readonly<City>` is created, you cannot change the values of its properties. It's a great way to enforce immutability and prevent accidental changes to your data.
+*   **`Pick<City, "name">`**: This utility type creates a *new* type by "picking" only the specified properties from an existing type. In this case, it creates a new type that only has the `name` property from the `City` type. This is useful when you have a function or component that only needs a subset of an object's properties.
+*   **`Omit<City, "country">`**: This utility type does the opposite of `Pick`. It creates a new type by taking all the properties from the `City` type and then "omitting" or removing the ones you specify. In this case, it creates a new type with all of `City`'s properties *except* for `country`.
 
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
