@@ -38,3 +38,50 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
 
+
+
+# changes listed with gemini CLI between 01_01b and 01_01e   (begin->end):
+
+───────────────────────────────────────────────────╮
+│  > make a diff betwee 01_01b and 01_01e branches  │
+╰───────────────────────────────────────────────────╯
+
+✦ I'll run git diff to compare the two branches.
+ ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+ │ ✔  Shell git diff origin/01_01b origin/01_01e (Comparing the differences between the 01_01b and 01_01e branches.)                                                          │
+ │                                                                                                                                                                            │
+ │    diff --git a/script.js b/script.js                                                                                                                                      │
+ │    new file mode 100644                                                                                                                                                    │
+ │    index 0000000..926f846                                                                                                                                                  │
+ │    --- /dev/null                                                                                                                                                           │
+ │    +++ b/script.js                                                                                                                                                         │
+ │    @@ -0,0 +1,10 @@                                                                                                                                                        │
+ │    +var City = /** @class */ (function () {                                                                                                                                │
+ │    +    function City(name, country) {                                                                                                                                     │
+ │    +        this.name = name;                                                                                                                                              │
+ │    +        this.country = country;                                                                                                                                        │
+ │    +    }                                                                                                                                                                  │
+ │    +    return City;                                                                                                                                                       │
+ │    +}());                                                                                                                                                                  │
+ │    +var berlin = new City("Berlin", "Germany");                                                                                                                            │
+ │    +console.log(berlin.name);                                                                                                                                              │
+ │    +console.log(berlin.country);                                                                                                                                           │
+ │    diff --git a/script.ts b/script.ts                                                                                                                                      │
+ │    index 01ce7ae..ffd85ef 100644                                                                                                                                           │
+ │    --- a/script.ts                                                                                                                                                         │
+ │    +++ b/script.ts                                                                                                                                                         │
+ │    @@ -1 +1,13 @@                                                                                                                                                          │
+ │    -console.log("We're ready!");                                                                                                                                           │
+ │    +class City {                                                                                                                                                           │
+ │    +  name: string;                                                                                                                                                        │
+ │    +  country: string;                                                                                                                                                     │
+ │    +                                                                                                                                                                       │
+ │    +  constructor(name: string, country: string) {                                                                                                                         │
+ │    +    this.name = name;                                                                                                                                                  │
+ │    +    this.country = country;                                                                                                                                            │
+ │    +  }                                                                                                                                                                    │
+ │    +}                                                                                                                                                                      │
+ │    +                                                                                                                                                                       │
+ │    +const berlin = new City("Berlin", "Germany");                                                                                                                          │
+ │    +console.log(berlin.name);                                                                                                                                              │
+ │    +console.log(berlin.country);    
