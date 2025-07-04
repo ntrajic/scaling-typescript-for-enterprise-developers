@@ -1,3 +1,20 @@
+interface Civilization<NotablePeopleType> {
+  name: string;
+  location: string;
+  notablePeople: NotablePeopleType[];
+}
+
+interface Person {
+  name: string;
+  occupation: string;
+}
+
+type Architect = Person & { occupation: "Architect" };
+type Pharaoh = Person & { occupation: "Pharaoh" };
+type Poet = Person & { occupation: "Poet" };
+type Philosopher = Person & { occupation: "Philosopher" };
+type General = Person & { occupation: "General" };
+
 const egyptianCivilization = {
   name: "Egyptian",
   location: "Africa",
