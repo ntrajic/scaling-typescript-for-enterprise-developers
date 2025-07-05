@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01",
+    "name": "Grand Summit",
+    "cost": 1000,
+    "amenities": ["pool", "hot tub", "spa"]
+  },
+  {
+    "id": "02",
+    "name": "Universal Hotel",
+    "cost": 300,
+    "amenities": ["view", "restaurant", "spa"]
+  },
+  {
+    "id": "03",
+    "name": "Chalet Lodge",
+    "cost": 100,
+    "amenities": ["breakfast"]
+  },
+  {
+    "id": "04",
+    "name": "Harrison Hostel",
+    "cost": 50,
+    "amenities": ["coffee"]
+  },
+  {
+    "id": "05",
+    "name": "Majestic Peak Lodge",
+    "cost": 1000,
+    "amenities": ["airport shuttle"]
+  }
+]
