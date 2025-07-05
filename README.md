@@ -24,17 +24,12 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-### Instructor
+## Installing
 
-Eve Porcello
+1. To use these exercise files, you must have the following installed:
+   - Node.js 18+
+2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 
-Software Developer and Instructor
-                            
-
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/eve-porcello?u=104).
-
-[0]: # (Replace these placeholder URLs with actual course URLs)
-
-[lil-course-url]: https://www.linkedin.com/learning/scaling-typescript-for-enterprise-developers
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQEeMPcfs0dGbw/learning-public-crop_675_1200/0/1722894799475?e=2147483647&v=beta&t=tqgy75zFHsjx6sVjBHTQRFtRBCkxiKUy1vm04UfqGqg
-
+[0]: # "Replace these placeholder URLs with actual course URLs"
+[lil-course-url]: https://www.linkedin.com/learning/
+[lil-thumbnail-url]: http://
