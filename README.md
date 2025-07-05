@@ -122,3 +122,10 @@ To resolve this issue:
 
             o Summary:
             Your configuration will work if you have Node.js, npx, and the @modelcontextprotocol/server-github package(s) available, and your GITHUB_TOKEN is set in your environment. If you encounter issues, verify these prerequisites and consider using the official Docker-based GitHub MCP server as an alternative
+
+### Gemini CLI: Convesational AI Powered Space via CLI 
+
+##  Using the Gemini CLI for AI Agent-automated development and testing
+
+            o http://bit.ly/4etOiIZ
+            o https://www.linkedin.com/posts/software-development-engineer-engineer-61a095297_conversational-ai-powered-space-via-cli-activity-7346164514721013761-tZ3E
