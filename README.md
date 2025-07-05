@@ -33,3 +33,92 @@ To resolve this issue:
 [0]: # "Replace these placeholder URLs with actual course URLs"
 [lil-course-url]: https://www.linkedin.com/learning/
 [lil-thumbnail-url]: http://
+
+
+## github_mcp server
+            To install and run the github_mcp server tools with your provided ~/.gemini/settings.json configuration, you need to ensure that the referenced server package (@modelcontextprotocol/server-github) is available to be run via npx and that your environment has a valid GITHUB_TOKEN set.
+
+            Your config:
+
+            ```json```
+            {
+                "theme": "GitHub",
+                "selectedAuthType": "gemini-api-key",
+                "mcpServers": {
+                    "github_mcp": {
+                    "command": "npx",
+                    "args": ["-y", "@modelcontextprotocol/server-github"],
+                    "env": {
+                        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+                    },
+                    "timeout": 30000,
+                    "trust": true
+                    }
+                }
+            }
+
+            o What this configuration does?
+            When Gemini (or another MCP client) starts the github_mcp server:
+
+            It runs:
+
+            ```bash```
+            npx -y @modelcontextprotocol/server-github
+            It sets the environment variable GITHUB_TOKEN to your ${GITHUB_TOKEN} value.
+
+            This launches the GitHub MCP server, which will use your token to authenticate GitHub API requests.
+
+            o Prerequisites
+            Node.js (ver GT 20.xx) and npx must be installed and available in your PATH.
+
+            A valid GitHub Personal Access Token with appropriate scopes (typically repo and read:packages) must be set in your environment as GITHUB_TOKEN.
+
+            The package @modelcontextprotocol/server-github must exist on npm. (If it does not, you'll get an error from npx.)
+
+            o Steps to Install and Run
+            Set your GitHub token in your environment:
+
+            ```bash```
+            export GITHUB_TOKEN=your_personal_access_token
+            Test running the server manually:
+
+            ```bash```
+            npx -y @modelcontextprotocol/server-github
+            If this runs successfully and prints server output, your setup is correct.
+
+            Start Gemini (or your MCP client) as usual.
+            It will read your settings.json and launch the server as configured.
+
+            o Troubleshooting
+            If you see errors like "command not found" or "package not found," check that:
+
+            Node.js and npx are installed.
+
+            The npm package @modelcontextprotocol/server-github is published and available.
+
+            Your GITHUB_TOKEN is valid and exported in your shell environment or stored in .env file.
+
+            o Alternative: Official GitHub MCP Server
+            If @modelcontextprotocol/server-github is not available, you can use the official GitHub MCP server from GitHub, which is typically run with Docker:
+
+            ```json```
+            "mcpServers": {
+                "github": {
+                    "command": "docker",
+                    "args": [
+                    "run",
+                    "-i",
+                    "--rm",
+                    "-e",
+                    "GITHUB_PERSONAL_ACCESS_TOKEN",
+                    "ghcr.io/github/github-mcp-server"
+                    ],
+                    "env": {
+                    "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+                    }
+                }
+            }
+            But your current setup is designed for an npm-based server.
+
+            o Summary:
+            Your configuration will work if you have Node.js, npx, and the @modelcontextprotocol/server-github package(s) available, and your GITHUB_TOKEN is set in your environment. If you encounter issues, verify these prerequisites and consider using the official Docker-based GitHub MCP server as an alternative
